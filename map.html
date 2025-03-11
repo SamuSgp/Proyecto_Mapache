@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapache</title>
+  <style>
+    /* --- RESET BÁSICO --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* --- ESTILO GENERAL DEL BODY --- */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d0e37; /* color de fondo suave */
+      color: #000000;              /* color de texto */
+    }
+
+    /* --- CABECERA (HEADER) --- */
+    header {
+      background-color: #032a2b; /* tono azul grisáceo oscuro */
+      padding: 15px;
+    }
+    .navbar {
+      max-width: 1200px; /* ancho máximo para centrar contenido */
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    /* Texto "Mapache" del header */
+    .logo-text-header {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+    /* Menú de navegación */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.5s;
+    }
+    nav a:hover {
+      color: #2C3E50;
+    }
+
+    /* --- SECCIÓN PRINCIPAL (MAIN) --- */
+    main {
+      max-width: 1200px;
+      margin: 20px auto;
+      background-color: #34495E ;
+      padding: 20px;
+      min-height: 60vh;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    /* Aquí mezclamos tu logo circular + texto "Mapache" */
+    .logo-container {
+      text-align: center;
+      margin-bottom: 40px; /* Espacio debajo del logo */
+    }
+    .logo {
+      width: 150px;             /* Ajusta a tu gusto */
+      height: 150px;            /* Mantiene proporción cuadrada */
+      border-radius: 50%;       /* Hace la imagen circular */
+      object-fit: cover;        /* Recorta la imagen si es más grande */
+      border: 7px solid #032a2b ;   /* Opcional: un borde para resaltar */
+    
+    }
+
+    .logo-text {
+      font-family: 'Times New Roman', Times, serif, sans-serif;
+      font-size: 35px;
+      margin-top: 10px;
+     
+    }
+
+    /* Título y contenido dentro del main */
+    h1 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center; /* Para centrar las tarjetas */
+    }
+    .card {
+      flex: 1 1 300px; 
+      background-color: #eaeaea;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+    }
+    .card h2 {
+      margin-bottom: 10px;
+    }
+
+    /* --- PIE DE PÁGINA (FOOTER) --- */
+    footer {
+      background-color: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+    footer p {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CABECERA -->
+  <header>
+    <div class="navbar">
+      <!-- Título "Mapache" en la cabecera -->
+      <div class="logo-text-header">Mapache</div>
+      <!-- Menú de navegación -->
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Acerca de</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SECCIÓN PRINCIPAL -->
+  <main>
+    <!-- Tu logo circular y el texto "Mapache" -->
+    <div class="logo-container">
+      <!-- Cambia "logoMap.png" por el nombre real de tu archivo -->
+      <img src="logoMap.png" alt="Logo de Mapache" class="logo">
+      <div class="logo-text">Mapache</div>
+    </div>
+
+    <!-- Un título para dar la bienvenida o explicar la app -->
+
+    <h1>Bienvenido a Mapache</h1>
+
+  
+
+    <!-- RECUADRO PARA INICIAR SESIÓN -->
+<div class="login-box">
+  <h2>Iniciar Sesión</h2>
+<!-- Reemplaza tu bloque de icon-container por este, 
+     o ubícalo donde quieras mostrar iconos + inputs en filas separadas. -->
+
+     <div style="display: flex; flex-direction: column; gap: 20px;">
+      <!-- Fila 1: icono de usuario + input -->
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="user.png" alt="Usuario" class="circle-icon">
+        <input 
+          type="text" 
+          placeholder="Usuario" 
+          style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; font-size: 14px;"
+        >
+      </div>
+    
+      <!-- icono de candado + input -->
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="lock.png" alt="Contraseña" class="circle-icon">
+        <input 
+          type="password" 
+          placeholder="Contraseña" 
+          style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; font-size: 14px;"
+        >
+      </div>
+     </div>
+
+     <button>
+      <span class="transition"></span>
+      <span class="gradient"></span>
+      <span class="label">Entrar</span>
+     
+    </button>
+
+    
+
+    </div>
+
+    <script>
+      function login() {
+        // Ubica los 2 inputs en la .login-box
+        const inputs = document.querySelectorAll('.login-box input');
+        const user = inputs[0].value;
+        const pass = inputs[1].value;
+  
+        // Envia a C# con action="login"
+        window.chrome.webview.postMessage({
+          action: "login",
+          username: user,
+          password: pass
+        });
+      }
+  
+      function mostrarMensaje(mensaje) {
+        alert(mensaje);
+      }
+    </script>  
+
+    </div>
+  </div>
+</div>    
+
+<!-- ESTILOS PARA EL RECUADRO -->
+<style>
+  /* Contenedor principal del recuadro */
+  .login-box {
+    width: 300px;
+    background-color: #e0e0e0;
+    border: 1px solid #3e3b3b;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 20px auto; /* Ajusta si quieres centrar o mover el recuadro */
+  }
+
+  .login-box h2 {
+    margin-bottom: 15px;
+  }
+
+  /* Contenedor para los íconos */
+  .icon-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  /* Imágenes circulares */
+  .circle-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #000; /* Borde negro (opcional) */
+  }
+
+
+</style>
+    <!-- PIE DE PÁGINA -->
+  <footer>
+    <p>&copy; 2025 Mapache. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
