@@ -2,6 +2,10 @@ using Microsoft.Web.WebView2.Core;
 using Newtonsoft.Json;
 using Microsoft.Data.SqlClient;
 
+
+
+//D
+
 namespace Mapache_web
 {
     public partial class Form1 : Form
@@ -21,7 +25,7 @@ namespace Mapache_web
         {
             await webView21.EnsureCoreWebView2Async();
 
-            // Carga el archivo HTML local (asegúrate de que "map.html" esté en el proyecto)
+            // Carga el archivo HTML local (asegï¿½rate de que "map.html" estï¿½ en el proyecto)
             string htmlPath = Path.Combine(Application.StartupPath, "map.html");
             webView21.Source = new Uri("file:///" + htmlPath);
 
@@ -41,22 +45,22 @@ namespace Mapache_web
             // Verifica la "action" enviada desde el HTML
             if (data.action == "login")
             {
-                // Obtén usuario y contraseña
+                // Obtï¿½n usuario y contraseï¿½a
                 string user = data.username;
                 string pass = data.password;
 
-                // Llama al método que valida en la BD
+                // Llama al mï¿½todo que valida en la BD
                 bool esValido = ValidarCredenciales(user, pass);
 
                 if (esValido)
                 {
                     // Respuesta exitosa al HTML
-                    webView21.CoreWebView2.ExecuteScriptAsync("mostrarMensaje('¡Validación exitosa!')");
+                    webView21.CoreWebView2.ExecuteScriptAsync("mostrarMensaje('ï¿½Validaciï¿½n exitosa!')");
                 }
                 else
                 {
                     // Respuesta de error al HTML
-                    webView21.CoreWebView2.ExecuteScriptAsync("mostrarMensaje('Usuario o contraseña incorrectos')");
+                    webView21.CoreWebView2.ExecuteScriptAsync("mostrarMensaje('Usuario o contraseï¿½a incorrectos')");
                 }
             }
         }
@@ -70,7 +74,7 @@ namespace Mapache_web
                   AND pass_user = @p
             ";
 
-            // Aquí ya no tendrás error, porque _connectionString está declarado en la misma clase
+            // Aquï¿½ ya no tendrï¿½s error, porque _connectionString estï¿½ declarado en la misma clase
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
